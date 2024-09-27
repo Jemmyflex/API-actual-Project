@@ -18,20 +18,20 @@ async function searchCocktails(query) {
 
 function displayCocktails(cocktails) {
     const cocktailList = document.getElementById('cocktail-list');
-    cocktailList.innerHTML = '';  // Clear previous results
+    cocktailList.innerHTML = '';  
 
     if (cocktails) {
         cocktails.forEach(cocktail => {
-            const cocktailCard = document.createElement('div');
-            cocktailCard.classList.add('cocktail-card');
+            const cocktailImage = document.createElement('div');
+            cocktailImage.classList.add('cocktail-image');
 
-            cocktailCard.innerHTML = `
+            cocktailImage.innerHTML = `
                 <img src="${cocktail.strDrinkThumb}" alt="${cocktail.strDrink}">
                 <h2>${cocktail.strDrink}</h2>
                 <p>${cocktail.strInstructions}</p>
             `;
 
-            cocktailList.appendChild(cocktailCard);
+            cocktailList.appendChild(cocktailImage);
         });
     } else {
         cocktailList.innerHTML = '<p>No cocktails found. Try a different search.</p>';
